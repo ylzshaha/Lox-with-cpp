@@ -1,0 +1,8 @@
+//[line 5] Error at 'method': undefined variable.
+// 70
+class Foo {
+  method() {
+    print method;
+  }
+}
+Foo().method();

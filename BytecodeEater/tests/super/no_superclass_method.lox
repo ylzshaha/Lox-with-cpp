@@ -1,0 +1,9 @@
+//[line 6] Error at 'super': Undefined property 'doesNotExist'.
+// 70
+class Base {}
+class Derived < Base {
+  foo() {
+    super.doesNotExist(1);
+  }
+}
+Derived().foo();

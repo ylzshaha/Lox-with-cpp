@@ -1,0 +1,5 @@
+//[<class Foo> Instance]
+// 0
+class Foo {}
+var foo = Foo();
+print foo;

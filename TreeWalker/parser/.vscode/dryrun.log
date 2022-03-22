@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/ldy/cpplox/parser'
+make: 'Expr.o' is up to date.
+make: Leaving directory '/home/ldy/cpplox/parser'
+ 

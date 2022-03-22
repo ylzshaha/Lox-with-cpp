@@ -1,0 +1,4 @@
+//[line 4] Error at 'bar': Only instances have fields.
+// 70
+fun foo() {}
+foo.bar = "value";

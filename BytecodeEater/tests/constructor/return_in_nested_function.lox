@@ -1,0 +1,12 @@
+// bar
+// [<class Foo> Instance]
+// 0
+class Foo {
+  init() {
+    fun init() {
+      return "bar";
+    }
+    print init();
+  }
+}
+print Foo();

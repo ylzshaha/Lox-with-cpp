@@ -1,0 +1,13 @@
+//[line 10] Error at ')': Expected 2 args but got 1.
+// 70
+class Base {
+  foo(a, b) {
+    print "Base.foo(" + a + ", " + b + ")";
+  }
+}
+class Derived < Base {
+  foo() {
+    super.foo(1);
+  }
+}
+Derived().foo();

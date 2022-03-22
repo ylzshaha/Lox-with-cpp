@@ -1,0 +1,4 @@
+// [line 4] Error at '{': Expect a primary Token! 
+// [line 4] Error at ')': Expected ';' after expression.
+// 65
+    for (var a = 1; {}; a = a + 1) {}

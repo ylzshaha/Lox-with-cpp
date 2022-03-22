@@ -1,0 +1,1042 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make scanner -C ./scanner 
+ 
+# make[1]: Entering directory '/home/ldy/cpplox/scanner'
+std=c++11 -m64 -g -MM cpplox.cc -MF depend/cpplox.d
+ 
+/bin/sh: 1: -m64: not found
+ 
+make[1]: [Makefile:20: depend/cpplox.d] Error 127 (ignored)
+ 
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Mon Feb 28 09:02:53 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=fcitx
+# makefile
+CURDIR := /home/ldy/cpplox/scanner
+# makefile
+SHELL = /bin/sh
+# environment
+VTE_VERSION = 6003
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:50149
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'depend/cpplox.d', line 1)
+MAKEFILE_LIST :=  Makefile depend/scanner.d depend/ErrorReporter.d depend/main.d depend/cpplox.d
+# automatic
+@F = $(notdir $@)
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+USERNAME = ldy
+# makefile (from 'Makefile', line 1)
+CXXFLAGS := -std=c++11 -m64 -g
+# environment
+MAKELEVEL := 1
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+_ = /usr/bin/code
+# makefile (from 'Makefile', line 4)
+OBJS :=  scanner.o  ErrorReporter.o  main.o  cpplox.o
+# environment
+MANAGERPID = 1097
+# environment
+CLUTTER_IM_MODULE = fcitx
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+LC_NAME = zh_CN.UTF-8
+# environment
+VSCODE_CWD = /home/ldy/cpplox
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/ldy/.local/bin:/home/ldy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ldy/depot_tools:/home/ldy/ninja:/home/ldy/depot_tools:/home/ldy/ninja
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/ldy:@/tmp/.ICE-unix/1584,unix/ldy:/tmp/.ICE-unix/1584
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+LC_ALL = C
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=4c5c0460-a1bf-4ecb-b09a-5e86067977d8&iid=4c5c0460-a1bf-4ecb-b09a-5e86067977d8&sid=4c5c0460-a1bf-4ecb-b09a-5e86067977d8","uploadToServer":true}
+# environment
+INVOCATION_ID = 06eb7ad597ae4f1a9a6a73ddb674d5ce
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+TMUX_PANE = %5
+# environment
+GTK_IM_MODULE = fcitx
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/ldy/cpplox
+# makefile (from 'Makefile', line 2)
+DDIR := ./depend
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 1539
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/ldy
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/ldy/.config/Code/CachedData/f80445acd5a3dadef24aa209168452a3d97cc326
+# environment
+LOGNAME = ldy
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+LC_TIME = zh_CN.UTF-8
+# environment
+COLORTERM = truecolor
+ 
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := scanner
+# environment
+QT_IM_MODULE = fcitx
+# makefile (from 'Makefile', line 3)
+SRCS := scanner.cc ErrorReporter.cc main.cc cpplox.cc
+# environment
+SHLVL = 2
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1ba82ed6-aa4e-4254-9bbc-e33f32c5fd13.sock
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = ldy
+# environment
+LC_MONETARY = zh_CN.UTF-8
+# makefile
+.DEFAULT_GOAL := scanner.o
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = zh_CN.UTF-8
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 6)
+INC := ./depend/scanner.d ./depend/ErrorReporter.d ./depend/main.d ./depend/cpplox.d
+# environment
+OLDPWD = /home/ldy
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-7dd45340-1.64.2-main.sock
+# makefile
+MAKEFLAGS = pqrRw
+# environment
+MFLAGS = -pqrRw
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+BREAKPAD_DUMP_LOCATION = /home/ldy/.config/Code/exthost Crash Reports
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+TMUX = /tmp//tmux-1000/default,2975,0
+# environment
+GDK_BACKEND = x11
+# environment
+LC_PAPER = zh_CN.UTF-8
+# environment
+LC_IDENTIFICATION = zh_CN.UTF-8
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+LC_NUMERIC = zh_CN.UTF-8
+# automatic
+<F = $(notdir $<)
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+LC_MEASUREMENT = zh_CN.UTF-8
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+QT4_IM_MODULE = fcitx
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d7313b39_a3f0_40f2_954e_5554fefef3ff
+# automatic
+^F = $(notdir $^)
+# makefile (from 'Makefile', line 5)
+DEPS :=  ./depend/scanner.d  ./depend/ErrorReporter.d  ./depend/main.d  ./depend/cpplox.d
+# environment
+GNOME_TERMINAL_SERVICE = :1.115
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# environment
+LC_ADDRESS = zh_CN.UTF-8
+# environment
+LANG = C
+# environment
+TERM = tmux-256color
+# environment
+VSCODE_PID = 1522378
+# variable set hash-table stats:
+# Load=125/1024=12%, Rehash=0, Collisions=25/182=14%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+ 
+# ./depend (device 2053, inode 1061618): 6 files, no impossibilities.
+# . (device 2053, inode 1061600): 17 files, no impossibilities.
+
+# 23 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+../interpreter/include/../../helper/reward.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../resolver/include/resolver.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+scanner.o: scanner.cc depend/scanner.d scanner.cc include/scanner.h include/TokenType.h include/cpplox.h include/ErrorReporter.h include/Token.h include/../../helper/reward.h include/../../helper/Node.h include/Token.h
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'scanner'
+#  Last modified 2022-02-27 21:42:37.999685
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := scanner.o
+# automatic
+# % := 
+# automatic
+# * := scanner
+# automatic
+# + := scanner.cc depend/scanner.d scanner.cc include/scanner.h include/TokenType.h include/cpplox.h include/ErrorReporter.h include/Token.h include/../../helper/reward.h include/../../helper/Node.h include/Token.h
+# automatic
+# | := 
+# automatic
+# < := scanner.cc
+# automatic
+# ^ := scanner.cc depend/scanner.d include/scanner.h include/TokenType.h include/cpplox.h include/ErrorReporter.h include/Token.h include/../../helper/reward.h include/../../helper/Node.h
+# automatic
+# ? := include/../../helper/reward.h
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  recipe to execute (from 'Makefile', line 17):
+	@echo $^
+	$(CXX) $(CXXFLAGS)  -c $< -o $@ 
+
+scanner: scanner.o ErrorReporter.o main.o cpplox.o
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+ 
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+
+cpplox.o: cpplox.cc depend/cpplox.d cpplox.cc include/cpplox.h include/ErrorReporter.h include/Token.h include/TokenType.h include/../../helper/reward.h include/../../helper/Node.h include/scanner.h ../parser/include/parser.h ../parser/include/../../scanner/include/Token.h ../parser/include/printast.h ../parser/include/../../helper/visitor.h ../parser/include/../../helper/Node.h ../parser/include/../../helper/Node.h ../interpreter/include/interpreter.h ../interpreter/include/../../helper/Node.h ../interpreter/include/../../helper/visitor.h ../interpreter/include/../../helper/reward.h ../interpreter/include/builtin.h ../helper/reward.h ../resolver/include/resolver.h ../resolver/include/../../helper/visitor.h ../resolver/include/../../helper/Node.h ../resolver/include/../../helper/reward.h
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'cpplox'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	@echo $^
+	$(CXX) $(CXXFLAGS)  -c $< -o $@ 
+
+# Not a target:
+include/scanner.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-24 09:56:18.39189
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../interpreter/include/../../helper/Node.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/cpplox.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-19 13:44:42.357703
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: scanner clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../parser/include/../../helper/visitor.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+scanner.cc:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-25 11:00:53.174273
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../interpreter/include/interpreter.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+cpplox.cc:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-27 22:31:34.081354
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+include/TokenType.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-21 15:18:45.862313
+#  File has been updated.
+#  Successfully updated.
+
+depend/ErrorReporter.d: ErrorReporter.cc
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'ErrorReporter'
+#  Last modified 2022-02-27 21:42:38.113754
+#  File has been updated.
+#  Successfully updated.
+ 
+#  recipe to execute (from 'Makefile', line 20):
+	$(CXX) $(CXXFLAGS) -MM $< -MF $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-16 21:24:43.642122
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../parser/include/parser.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../helper/reward.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../resolver/include/../../helper/reward.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../resolver/include/../../helper/Node.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+depend/scanner.d: scanner.cc
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'scanner'
+#  Last modified 2022-02-27 21:42:36.480461
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 20):
+	$(CXX) $(CXXFLAGS) -MM $< -MF $@
+
+# Not a target:
+include/../../helper/reward.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-27 22:31:36.767416
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../interpreter/include/../../helper/visitor.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+depend/cpplox.d: cpplox.cc
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'cpplox'
+#  Last modified 2022-02-27 21:42:40.312335
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := depend/cpplox.d
+# automatic
+# % := 
+# automatic
+# * := cpplox
+# automatic
+# + := cpplox.cc
+# automatic
+# | := 
+# automatic
+# < := cpplox.cc
+# automatic
+# ^ := cpplox.cc
+# automatic
+# ? := cpplox.cc
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+#  recipe to execute (from 'Makefile', line 20):
+	$(CXX) $(CXXFLAGS) -MM $< -MF $@
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ErrorReporter.o: ErrorReporter.cc depend/ErrorReporter.d ErrorReporter.cc include/ErrorReporter.h include/Token.h include/TokenType.h include/../../helper/reward.h include/../../helper/Node.h
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'ErrorReporter'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	@echo $^
+	$(CXX) $(CXXFLAGS)  -c $< -o $@ 
+
+# Not a target:
+include/../../helper/Node.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-27 12:24:10.522321
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../interpreter/include/builtin.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../parser/include/../../helper/Node.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 25):
+	rm -f *.o 
+	rm -f ./depend/*.d 
+
+# Not a target:
+ErrorReporter.cc:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-24 16:11:40.954417
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+include/ErrorReporter.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-24 16:11:40.054427
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../parser/include/printast.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+main: scanner.o ErrorReporter.o main.o cpplox.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 9):
+	$(CXX) $^ -o $@
+
+main.o: main.cc depend/main.d main.cc include/cpplox.h include/ErrorReporter.h include/Token.h include/TokenType.h include/../../helper/reward.h include/../../helper/Node.h
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'main'
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	@echo $^
+	$(CXX) $(CXXFLAGS)  -c $< -o $@ 
+
+# Not a target:
+include/Token.h:
+ 
+#  Implicit rule search has been done.
+#  Last modified 2022-02-25 11:00:51.542263
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../parser/include/../../scanner/include/Token.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.cc:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-25 11:00:50.746258
+#  File has been updated.
+#  Successfully updated.
+
+depend/main.d: main.cc
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-02-27 21:42:39.181624
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 20):
+	$(CXX) $(CXXFLAGS) -MM $< -MF $@
+
+# Not a target:
+../resolver/include/../../helper/visitor.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=41/1024=4%, Rehash=0, Collisions=0/134=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 60 / storage = 1097 B / avg = 18 B
+# current buf: size = 8162 B / used = 1097 B / count = 60 / avg = 18 B
+
+# strcache performance: lookups = 157 / hit rate = 61%
+# hash-table stats:
+# Load=60/8192=1%, Rehash=0, Collisions=2/157=1%
+# Finished Make data base on Mon Feb 28 09:02:53 2022
+
+# make[1]: Leaving directory '/home/ldy/cpplox/scanner'
+ 
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Mon Feb 28 09:02:53 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=fcitx
+# makefile
+CURDIR := /home/ldy/cpplox
+# makefile
+SHELL = /bin/sh
+# environment
+VTE_VERSION = 6003
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:50149
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+USERNAME = ldy
+# environment
+MAKELEVEL := 0
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+_ = /usr/bin/code
+# makefile (from 'Makefile', line 5)
+OBJS :=  ./parser/parser.o  ./parser/printast.o  ./parser/Expr.o  ./scanner/scanner.o  ./scanner/ErrorReporter.o  ./scanner/cpplox.o  ./interpreter/builtin.o  ./interpreter/interpreter.o  ./resolver/resolver.o
+# environment
+MANAGERPID = 1097
+# environment
+CLUTTER_IM_MODULE = fcitx
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+LC_NAME = zh_CN.UTF-8
+# environment
+VSCODE_CWD = /home/ldy/cpplox
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/ldy/.local/bin:/home/ldy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ldy/depot_tools:/home/ldy/ninja:/home/ldy/depot_tools:/home/ldy/ninja
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/ldy:@/tmp/.ICE-unix/1584,unix/ldy:/tmp/.ICE-unix/1584
+ 
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=4c5c0460-a1bf-4ecb-b09a-5e86067977d8&iid=4c5c0460-a1bf-4ecb-b09a-5e86067977d8&sid=4c5c0460-a1bf-4ecb-b09a-5e86067977d8","uploadToServer":true}
+# environment
+INVOCATION_ID = 06eb7ad597ae4f1a9a6a73ddb674d5ce
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 1)
+DIR := ./parser ./scanner ./interpreter ./resolver
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+TMUX_PANE = %5
+# environment
+GTK_IM_MODULE = fcitx
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/ldy/cpplox
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 1539
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/ldy
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/ldy/.config/Code/CachedData/f80445acd5a3dadef24aa209168452a3d97cc326
+# environment
+LOGNAME = ldy
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# makefile (from 'Makefile', line 2)
+ALLSRCS :=  ./parser/parser.cc ./parser/printast.cc ./parser/Expr.cc  ./scanner/scanner.cc ./scanner/ErrorReporter.cc ./scanner/main.cc ./scanner/cpplox.cc  ./interpreter/builtin.cc ./interpreter/interpreter.cc  ./resolver/resolver.cc
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+LC_TIME = zh_CN.UTF-8
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+ 
+QT_IM_MODULE = fcitx
+# makefile (from 'Makefile', line 4)
+SRCS := ./parser/parser.cc ./parser/printast.cc ./parser/Expr.cc ./scanner/scanner.cc ./scanner/ErrorReporter.cc ./scanner/cpplox.cc ./interpreter/builtin.cc ./interpreter/interpreter.cc ./resolver/resolver.cc
+# environment
+SHLVL = 2
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-1ba82ed6-aa4e-4254-9bbc-e33f32c5fd13.sock
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = ldy
+# environment
+LC_MONETARY = zh_CN.UTF-8
+# makefile
+.DEFAULT_GOAL := show
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = zh_CN.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /home/ldy
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-7dd45340-1.64.2-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+BREAKPAD_DUMP_LOCATION = /home/ldy/.config/Code/exthost Crash Reports
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+TMUX = /tmp//tmux-1000/default,2975,0
+# environment
+GDK_BACKEND = x11
+# environment
+LC_PAPER = zh_CN.UTF-8
+# environment
+LC_IDENTIFICATION = zh_CN.UTF-8
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+LC_NUMERIC = zh_CN.UTF-8
+# automatic
+<F = $(notdir $<)
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from 'Makefile', line 3)
+MAINSRCS :=    ./scanner/main.cc    
+# environment
+LC_MEASUREMENT = zh_CN.UTF-8
+# environment
+LC_ALL = C
+# environment
+QT4_IM_MODULE = fcitx
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d7313b39_a3f0_40f2_954e_5554fefef3ff
+# automatic
+^F = $(notdir $^)
+# environment
+GNOME_TERMINAL_SERVICE = :1.115
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# environment
+LC_ADDRESS = zh_CN.UTF-8
+# environment
+LANG = C
+# environment
+TERM = tmux-256color
+# environment
+VSCODE_PID = 1522378
+# variable set hash-table stats:
+# Load=124/1024=12%, Rehash=0, Collisions=23/159=14%
+ 
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2053, inode 1054811): 14 files, no impossibilities.
+# ./interpreter (device 2053, inode 1061494): 9 files, no impossibilities.
+# ./parser (device 2053, inode 1061540): 12 files, no impossibilities.
+# ./scanner (device 2053, inode 1061600): 17 files, no impossibilities.
+# ./resolver (device 2053, inode 1061585): 7 files, no impossibilities.
+
+# 59 files, no impossibilities in 5 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+scanner:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := scanner
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/14=14%
+#  recipe to execute (from 'Makefile', line 13):
+	$(MAKE) $@ -C ./scanner 
+
+all: scanner parser interpreter resolver
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'Makefile', line 11):
+	$(CXX) $(OBJS) ./scanner/main.o -o lox 
+
+.PHONY: scanner parser interpreter resolver clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-27 21:29:18.8088
+#  File has been updated.
+#  Successfully updated.
+
+resolver:
+ 
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 19):
+	$(MAKE) $@ -C ./resolver
+
+interpreter:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	$(MAKE) $@ -C ./interpreter
+
+parser:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 15):
+	$(MAKE) $@ -C ./parser
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	$(MAKE) $@ -C ./scanner 
+	$(MAKE) $@ -C ./parser
+	$(MAKE) $@ -C ./interpreter
+	$(MAKE) $@ -C ./resolver
+
+show:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 7):
+	@echo $(SRCS)
+
+# files hash-table stats:
+# Load=11/1024=1%, Rehash=0, Collisions=0/39=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 49 / storage = 462 B / avg = 9 B
+# current buf: size = 8162 B / used = 462 B / count = 49 / avg = 9 B
+
+# strcache performance: lookups = 100 / hit rate = 51%
+# hash-table stats:
+# Load=49/8192=1%, Rehash=0, Collisions=5/100=5%
+# Finished Make data base on Mon Feb 28 09:02:53 2022
+
+ 

@@ -1,0 +1,3 @@
+//[line 3] Error at '/': Operand must be a number.
+// 70
+1 / "1";

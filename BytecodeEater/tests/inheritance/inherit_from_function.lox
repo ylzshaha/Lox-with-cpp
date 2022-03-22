@@ -1,0 +1,4 @@
+//[line 4] Error at 'Subclass': Superclass must be a class.
+// 70
+fun foo() {}
+class Subclass < foo {}
