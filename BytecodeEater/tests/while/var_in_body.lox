@@ -1,3 +1,0 @@
-// [line 3] Error at 'var': Expect a primary Token! 
-// 65
-while (true) var foo;

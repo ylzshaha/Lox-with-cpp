@@ -1,4 +1,0 @@
-// <class Foo>
-// 0
-class Foo {}
-print Foo;

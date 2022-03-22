@@ -1,5 +1,0 @@
-// [line 4] Error at 'a': Already a variable with this name in this scope.
-// 65
-fun foo(a) {
-  var a;
-}

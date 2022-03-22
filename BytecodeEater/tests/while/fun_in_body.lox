@@ -1,3 +1,0 @@
-// [line 3] Error at 'fun': Expect a primary Token! 
-// 65
-while (true) fun foo() {}

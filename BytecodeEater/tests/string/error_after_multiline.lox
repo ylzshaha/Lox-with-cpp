@@ -1,7 +1,0 @@
-//[line 7] Error at 'err': undefined variable.
-// 70
-var a = "1
-2
-3
-";
-err;

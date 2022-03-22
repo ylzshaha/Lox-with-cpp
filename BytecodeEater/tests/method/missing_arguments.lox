@@ -1,6 +1,0 @@
-//[line 6] Error at ')': Expected 2 args but got 1. 
-// 70
-class Foo {
-  method(a, b) {}
-}
-Foo().method(1);

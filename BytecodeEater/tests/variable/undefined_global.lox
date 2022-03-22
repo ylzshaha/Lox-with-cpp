@@ -1,3 +1,0 @@
-//[line 3] Error at 'notDefined': undefined variable. 
-// 70
-print notDefined;

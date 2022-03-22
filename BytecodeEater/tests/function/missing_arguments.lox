@@ -1,4 +1,0 @@
-//[line 4] Error at ')': Expected 2 args but got 1.
-// 70
-fun f(a, b) {}
-f(1);

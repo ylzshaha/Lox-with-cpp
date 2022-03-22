@@ -1,5 +1,0 @@
-//[line 4] Error at 'notDefined': undefined variable.
-// 70
-{
-  print notDefined;
-}

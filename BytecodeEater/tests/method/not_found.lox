@@ -1,4 +1,0 @@
-//[line 4] Error at 'unknown': Undefined property 'unknown'.
-// 70
-class Foo {}
-Foo().unknown();

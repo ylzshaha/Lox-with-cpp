@@ -1,4 +1,0 @@
-//[line 4] Error at 'Foo': Superclass must be a class.
-// 70
-var Number = 123;
-class Foo < Number {}

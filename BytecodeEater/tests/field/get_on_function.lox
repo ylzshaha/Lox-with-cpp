@@ -1,4 +1,0 @@
-// [line 4] Error at 'bar': Only instances have properties.
-// 70
-fun foo() {}
-foo.bar;

@@ -1,9 +1,0 @@
-// [line 9] Error at ')': Expected 2 args but got 4.
-// 70
-class Foo {
-  init(a, b) {
-    this.a = a;
-    this.b = b;
-  }
-}
-var foo = Foo(1, 2, 3, 4);
