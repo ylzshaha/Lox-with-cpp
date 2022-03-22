@@ -1,5 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/ldy/cpplox'
-echo ./parser/parser.cc ./parser/printast.cc ./parser/Expr.cc ./scanner/scanner.cc ./scanner/ErrorReporter.cc ./scanner/cpplox.cc ./interpreter/builtin.cc ./interpreter/interpreter.cc ./resolver/resolver.cc
-make: Leaving directory '/home/ldy/cpplox'
- 

@@ -1,1 +1,0 @@
-{"buildTargets":["ErrorReporter.o","all","clean","cpplox.o","depend/ErrorReporter.d","depend/cpplox.d","depend/main.d","depend/scanner.d","interpreter","main","main.o","parser","resolver","scanner","scanner.o","show"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
