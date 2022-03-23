@@ -12,7 +12,7 @@
 class Object;
 
 using Value = boost::variant<boost::blank, double, bool, Object*, std::string, long int>;
-//#define DEBUG_TRACE_EXCUTION
+#define DEBUG_TRACE_EXCUTION
 //#define DEBUG_STRESS_GC
 //#define DEBUG_LOG_GC
 #define GC_HEAP_GROW_FACTOR 2

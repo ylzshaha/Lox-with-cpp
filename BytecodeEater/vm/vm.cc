@@ -152,6 +152,7 @@ VM::Interpreter(ObjFuncPtr function)
         GET_CHUNK()->offset_ = Run();
     }
     catch(RuntimeErrorType type ){
+        GET_CHUNK()->offset_ = GET_CHUNK()->code_.size();
         return;
     }
 }
@@ -375,7 +376,7 @@ VM::Run()
                 }
                 //if the function is the main function
                 //pop the main function and return
-                if(frame_count_ == 0){
+                if(frame_count_ == 0 || (frames_[frame_count_ - 1].is_main == true && is_repl == true)){
                     return last_ip;
                 }
                 stack_top_ = frame->slots;
