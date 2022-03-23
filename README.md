@@ -2,7 +2,7 @@
 
 Lox is a small high-level toy language created by Robert Nystrom. 
 
-The language has a lot in common with JavaScript such as scope features, function closures, and OOP implementations so it helps a lot when i tried to read the V8's source code. This repository has two kinds of lox interpreter written according to [Robert's book](http://www.craftinginterpreters.com/contents.html) by cpp.
+The language has a lot in common with JavaScript such as scope features, function closures, and OOP implementations so it helps me a lot when i tried to read the V8's source code. This repository has two kinds of lox interpreter written according to [Robert's book](http://www.craftinginterpreters.com/contents.html) by cpp.
 
 ## TreeWalker
 
