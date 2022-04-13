@@ -4,6 +4,7 @@
 #include "../vm/include/vm.h"
 #include "bytecode.h"
 #include <boost/variant.hpp>
+#include <boost/variant/detail/apply_visitor_delayed.hpp>
 #include <cstddef>
 #include <cstdint>
 #include <fmt/core.h>
@@ -21,7 +22,8 @@ enum ObjType
     OBJ_STRING,OBJ_FUNCTION,
     OBJ_BUILTIN, OBJ_CLOSURE,
     OBJ_UP_VALUE,OBJ_CLASS,
-    OBJ_INSTANCE, OBJ_BOUND_METHOD
+    OBJ_INSTANCE, OBJ_BOUND_METHOD,
+    OBJ_ARRAY
 };
 
 enum FunctionType {
@@ -48,6 +50,7 @@ public:
     virtual bool IsClass() {return (type_ == ObjType::OBJ_CLASS);}
     virtual bool IsInstance() {return (type_ == ObjType::OBJ_INSTANCE);}
     virtual bool IsBound() {return (type_ == ObjType::OBJ_BOUND_METHOD);}
+    virtual bool IsArray() {return (type_ == ObjType::OBJ_ARRAY);}
     friend VM;
     friend Collector;
 private:
@@ -65,6 +68,19 @@ public:
     std::string ContentGetter() {return content_;}
     
     std::string content_;
+};
+
+class ObjArray : public Object
+{
+public:
+    ObjArray():
+        Object(ObjType::OBJ_ARRAY){}
+    ~ObjArray()
+    {
+        ::operator delete ((void*)element);
+    }
+    Value* element = nullptr;
+    double size = 0;
 };
 
 class ObjFunction : public Object 
@@ -220,6 +236,17 @@ public:
             std::string print_value = "<bound method " + bound_method->method->function->name->content_ + ">";
             return print_value;
         } 
+        else if(object->IsArray()){
+            ObjArray* array = dynamic_cast<ObjArray*>(object);
+            std::string print_value = "[";
+            for(int i = 0; i < array->size; i++){
+                print_value += boost::apply_visitor(StringVisitor(), array->element[i]);
+                if(i != array->size - 1)
+                    print_value += ", ";
+            }
+            print_value += "]";
+            return print_value;
+        }
         return std::string();
     }
 
@@ -276,6 +303,7 @@ MemoryAllocater(size_t size)
 #define AS_FUNCTION_OBJ(value) (dynamic_cast<ObjFuncPtr>(boost::get<ObjPtr>(value)))
 #define AS_CLASS_OBJ(value) (dynamic_cast<ObjClass*>(boost::get<ObjPtr>(value)))
 #define AS_INSTANCE_OBJ(value) (dynamic_cast<ObjInstance*>(boost::get<ObjPtr>(value)))
+#define AS_ARRAY_OBJ(value) (dynamic_cast<ObjArray*>(boost::get<Object*>(value)))
 #define IS_CLASS_OBJ(value) (IsObjType(value, ObjType::OBJ_CLASS))
 #define IS_INSTANCE_OBJ(value) (IsObjType(value, ObjType::OBJ_INSTANCE))
 #endif 

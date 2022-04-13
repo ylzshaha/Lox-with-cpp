@@ -34,7 +34,7 @@ public:
         TOO_MUCH_PARAMETER, EXCEPT_FUNC_PARAMETER,
         EXCEPT_CLASS_NAME, EXCEPT_LEFT_BRACE,
         EXCEPT_PROPERITY_NAME, EXCEPT_SUPPERCLASS_NAME,
-        EXCEPT_DOT
+        EXCEPT_DOT, EXCEPT_RIGHT_BRACKET
     };
     Parser(std::vector<shared_ptr<TokenBase>> tokens_arg, Lox* lox_arg): tokens_(tokens_arg), lox(lox_arg) {}
     vector<std::unique_ptr<Statement>> Parse();

@@ -358,4 +358,40 @@ PrintAstVisitor::SuperExprVisit(const SuperExpr& super_expr)
     result = print_value;
     return result;
 }
+
+Value 
+PrintAstVisitor::ArrayListVisit(const ArrayList &array_list)
+{
+    Value result;
+    double size = array_list.list_.size();
+    string print_value = "[";
+    for(int i = 0; i < size; i++){
+                print_value += PrintAst(array_list.list_[i].get());
+                if(i != size - 1)
+                    print_value += ", ";
+            }
+            print_value += "]";
+    result = print_value;
+    return result;
+}
+
+Value
+PrintAstVisitor::ArrayGetVisit(const ArrayGet &array_get)
+{
+    Value result;
+    string print_value = PrintAst(array_get.array_.get());
+    print_value += "[" + PrintAst(array_get.index_.get()) + "]";
+    result = print_value;
+    return result;
+}
+Value
+PrintAstVisitor::ArraySetVisit(const ArraySet &array_set)
+{
+    Value result;
+    string print_value = "(= ";
+    print_value += PrintAst(array_set.array_.get()) + "[" + PrintAst(array_set.index_.get()) + "] ";
+    print_value += PrintAst(array_set.value_.get());
+    result = print_value;
+    return result;
+}
 //finally return print (Return )

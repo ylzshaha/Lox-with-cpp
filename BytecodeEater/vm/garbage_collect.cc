@@ -142,6 +142,8 @@ Collector::StringTableRemoveWhite()
     bool c = (a == b);
     for(auto i = vm.strings_.begin(); i != vm.strings_.end(); i++){
         if(i->second != nullptr && i->second->is_marked != true){
+            //there will not call the destructor 
+            //because the string table only store the pointer of ObjString
             vm.strings_.erase(i);
         }
     }
@@ -193,6 +195,11 @@ Collector::BlackOne(Object* object)
             ObjBoundMethod* bound_method = dynamic_cast<ObjBoundMethod*>(object);
             MarkObject(bound_method->method);
             MarkValue(bound_method->receiver);
+        }
+        case ObjType::OBJ_ARRAY:{
+            ObjArray* array = dynamic_cast<ObjArray*>(object);
+            for(int i = 0; i < array->size; i++)
+                MarkValue(*(array->element + i));
         }
         default:
             return;

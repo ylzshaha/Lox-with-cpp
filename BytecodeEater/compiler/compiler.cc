@@ -436,6 +436,41 @@ Compiler::ObjectSetVisit(const ObjectSet& set_expr)
     return boost::blank();
 }
 
+Value
+Compiler::ArrayListVisit(const ArrayList& array_list)
+{
+    uint32_t line = array_list.token_->get_line();
+    const vector<ExprPtr>& list = array_list.list_;
+    for(int i = 0; i < list.size(); i++){
+        list[list.size() - 1 - i]->Accept(this);
+    }
+    double array_size = list.size();
+    EmitConstant(array_size, line);
+    EmitByte(OpCode::OP_ARRAY_CREATE, line);
+    return boost::blank();
+}
+
+Value
+Compiler::ArrayGetVisit(const ArrayGet& array_get)
+{
+    uint32_t line = array_get.token_->get_line();
+    array_get.array_->Accept(this);
+    array_get.index_->Accept(this);
+    EmitByte(OpCode::OP_ARRAY_GET, line);
+    return boost::blank();
+}
+
+Value
+Compiler::ArraySetVisit(const ArraySet& array_set)
+{
+    uint32_t line = array_set.token_->get_line();
+    array_set.value_->Accept(this);
+    array_set.array_->Accept(this);
+    array_set.index_->Accept(this);
+    EmitByte(OpCode::OP_ARRAY_SET, line);
+    return boost::blank();
+}
+
 
 uint32_t
 Compiler::ArguementList(const std::vector<ExprPtr>& list ,std::uint32_t line)

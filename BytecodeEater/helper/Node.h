@@ -38,8 +38,11 @@ using TokenPtr = std::shared_ptr<TokenBase>;
     V(ClassDecl)                        \
     V(ObjectGet)                        \
     V(ObjectSet)                        \
+    V(ArrayList)                        \
     V(ThisExpr)                         \
     V(SuperExpr)                        \
+    V(ArrayGet)                         \
+    V(ArraySet)                         \
     W(Expression)                       \
     W(Statement)                
 
@@ -85,8 +88,11 @@ public:
     virtual ClassDecl* IsClassDecl() {return nullptr;}
     virtual ObjectGet* IsObjectGet() {return nullptr;}
     virtual ObjectSet* IsObjectSet() {return nullptr;}
+    virtual ArrayList* IsArrayList() {return nullptr;}
     virtual ThisExpr* IsThisExpr() {return nullptr;}
     virtual SuperExpr* IsSuperExpr(){return nullptr;}
+    virtual ArrayGet* IsArrayGet() {return nullptr;}
+    virtual ArraySet* IsArraySet() {return nullptr;}
 };
 
 class Expression : public Node
@@ -469,6 +475,56 @@ public:
 private:
     TokenPtr keyword_;
     TokenPtr method_;
+};
+
+class ArrayList : public Expression
+{
+public:
+    ArrayList(std::vector<ExprPtr>& list, TokenPtr token):
+        token_(token){
+            for(int i = 0; i < list.size(); i++){
+                list_.push_back(std::move(list[i]));
+            }
+        }
+    ArrayList* IsArrayList() override {return this;}
+    Value Accept(VisitorBase* visitor) override;
+    friend PrintAstVisitor;
+    friend Compiler;
+private:
+    std::vector<ExprPtr> list_;
+    TokenPtr token_;
+};
+
+class ArrayGet : public Expression
+{
+public:
+    ArrayGet(ExprPtr& array, ExprPtr& index, TokenPtr token):
+        array_(std::move(array)), index_(std::move(index)), token_(token){}
+    ArrayGet* IsArrayGet() override {return this;}
+    friend Compiler;
+    friend PrintAstVisitor;
+    friend Parser;
+    Value Accept(VisitorBase* visitor) override;
+private:
+    ExprPtr index_;
+    ExprPtr array_;
+    TokenPtr token_;
+};
+
+class ArraySet : public Expression
+{
+public:
+    ArraySet(ExprPtr& array, ExprPtr& index, ExprPtr& value, TokenPtr& token):
+        array_(std::move(array)), index_(std::move(index)), value_(std::move(value)), token_(token){}
+    ArraySet* IsArraySet() override {return this;}
+    Value Accept(VisitorBase* visitor) override;
+    friend Compiler;
+    friend PrintAstVisitor;
+private:
+    ExprPtr array_;
+    ExprPtr index_;
+    ExprPtr value_;
+    TokenPtr token_;
 };
 
 #endif

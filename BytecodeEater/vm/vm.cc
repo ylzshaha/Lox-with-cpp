@@ -1,6 +1,7 @@
 #include "../debugger/include/debugger.h"
 #include "../scanner/include/ErrorReporter.h"
 #include "../helper/object.h"
+#include <boost/variant/get.hpp>
 #include <cstdint>
 #include <fmt/core.h>
 #include "include/vm.h"
@@ -340,10 +341,10 @@ VM::Run()
         if(IS_NUMBER(right_operand) && IS_NUMBER(left_operand)){                        \
             double right_value = boost::get<double>(right_operand);                     \
             double left_value = boost::get<double>(left_operand);                       \
-            stack_top_[-1] = left_value op right_value;                          \
+            stack_top_[-1] = left_value op right_value;                                 \
         }                                                                               \
         else                                                                            \
-            throw GetRuntimeError("Binary operands must be two numbers.",\
+            throw GetRuntimeError("Binary operands must be two numbers.",               \
                  RuntimeErrorType::TYPE_ERROR);                                         \
     }while(false)  
 #define READ_STRING() (dynamic_cast<ObjStrPtr>(boost::get<Object*>(frame->closure->function->chunk->constant_[READ_ADDR()])))
@@ -624,6 +625,35 @@ VM::Run()
                 ObjClass* superclass = AS_CLASS_OBJ(PopStack());
                 InvokeFromClass(superclass, name, args_count);
                 frame = &frames_[frame_count_ - 1];
+                break;
+            }
+            case OpCode::OP_ARRAY_CREATE:{
+                double array_size = boost::get<double>(PopStack());
+                void* raw_ptr = MemoryAllocater(sizeof(ObjArray));
+                ObjArray* array = new(raw_ptr) ObjArray();
+                void* element_ptr = MemoryAllocater(array_size * sizeof(Value));
+                array->element = (Value*)element_ptr;
+                array->size = array_size;
+                for(int i = 0; i < array_size; i++){
+                    Value element = PopStack();
+                    Value* ptr = new (array->element + i) Value();
+                    *(array->element + i) = element;
+                }
+                PushStack(array);
+                break;
+            }
+            case OpCode::OP_ARRAY_GET:{
+                int64_t index = (int64_t)(boost::get<double>(PopStack()));
+                ObjArray* array = AS_ARRAY_OBJ(PopStack());
+                Value target = *(array->element + index);
+                PushStack(target);
+                break; 
+            }
+            case OpCode::OP_ARRAY_SET:{
+                int64_t index = (int64_t)(boost::get<double>(PopStack()));
+                ObjArray* array = AS_ARRAY_OBJ(PopStack());
+                Value value = Peek(0);
+                *(array->element + index) = value;
                 break;
             }
             default:

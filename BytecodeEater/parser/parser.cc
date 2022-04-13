@@ -5,6 +5,7 @@
 #include <initializer_list>
 #include <functional>
 #include <memory>
+#include <vector>
 //-----------Expression Part-----------------------------------
 //expression     → assignment ;
 //assignment     → ( call "." )? IDENTIFIER "=" assignment
@@ -120,6 +121,10 @@ Parser::AssignmentExprCreate()
         else if(left_expr->IsObjectGet()){
             ObjectGet* get_expr = left_expr->IsObjectGet();
             return unique_ptr<Expression>(new ObjectSet(get_expr->object_, get_expr->name_, value_expr));
+        }
+        else if(left_expr->IsArrayGet()){
+            ArrayGet* get_expr = left_expr->IsArrayGet();
+            return unique_ptr<Expression>(new ArraySet(get_expr->array_, get_expr->index_, value_expr, equal_operator));
         }
         else
             throw SynatxErrorTrigger("Invalid assignment target.", ErrorType::INVALID_ASSIGN_TARGET, equal_operator.get());
@@ -238,6 +243,13 @@ Parser::CallExprCreate()
                 "Expected property name after '.'.", ErrorType::EXCEPT_PROPERITY_NAME);
             result_expr = unique_ptr<Expression>(new ObjectGet(result_expr, name));
         }
+        else if(Match({TokenType::LEFT_BRACKET})){
+            TokenPtr token = Previous();
+            ExprPtr index = ExpressionNodeCreate();
+            Consume(TokenType::RIGHT_BRACKET, 
+                "Excpet ']' after index", ErrorType::EXCEPT_RIGHT_BRACKET);
+            result_expr = unique_ptr<Expression>(new ArrayGet(result_expr, index, token));
+        }
         else
             break;
     }
@@ -297,6 +309,21 @@ Parser::PrimaryExprCreate()
         TokenPtr method = Consume(TokenType::IDENTIFIER, "Expected superclass method name.", ErrorType::EXCEPT_PROPERITY_NAME);
         ExprPtr node = ExprPtr(new SuperExpr(keyword, method));
         return node;
+    }
+    else if(Match({TokenType::LEFT_BRACKET})){
+        TokenPtr token = Previous();
+        vector<ExprPtr> contents;
+        if(!Check(TokenType::RIGHT_BRACKET)){
+            do
+            {
+                contents.push_back(ExpressionNodeCreate());
+            } while (Match({TokenType::COMMA}));
+        }
+        Consume(TokenType::RIGHT_BRACKET, 
+            "Expected ')' at the end of array.", ErrorType::EXCEPT_RIGHT_BRACKET);
+        ExprPtr node = ExprPtr(new ArrayList(contents, token));
+        return node;
+
     }
     shared_ptr<TokenBase> current_token = tokens_[current_];
     throw SynatxErrorTrigger("Expect a primary Token!", ErrorType::INVALID_PRIMARY_TOKEN, current_token.get());

@@ -7,7 +7,7 @@ using namespace std;
 enum TokenType {
   // Single-character tokens.
   LEFT_PAREN, RIGHT_PAREN, LEFT_BRACE, RIGHT_BRACE,
-  COMMA, DOT, MINUS, PLUS, SEMICOLON, SLASH, STAR,
+  COMMA, DOT, MINUS, PLUS, SEMICOLON, SLASH, STAR, LEFT_BRACKET, RIGHT_BRACKET,
 
   // One or two character tokens.
   BANG, BANG_EQUAL,
@@ -37,6 +37,8 @@ enum TokenType {
   ODINARY_TOKEN("SEMICOLON", TokenType::SEMICOLON)                      \
   ODINARY_TOKEN("SLASH", TokenType::SLASH)                              \
   ODINARY_TOKEN("STAR", TokenType::STAR)                                \
+  ODINARY_TOKEN("LEFT_BRACKET", TokenType::LEFT_BRACKET)                \
+  ODINARY_TOKEN("RIGHT_BRACKET", TokenType::RIGHT_BRACKET)              \
   ODINARY_TOKEN("BANG", TokenType::BANG)                                \
   ODINARY_TOKEN("BANG_EQUAL", TokenType::BANG_EQUAL)                    \
   ODINARY_TOKEN("EQUAL", TokenType::EQUAL)                              \

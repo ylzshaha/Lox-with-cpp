@@ -18,8 +18,6 @@ void
 PrintValue(Value value)
 {
     string str =  boost::apply_visitor(StringVisitor(), value);
-    if(value.which() == 3)
-        str = "\"" + str + "\"";
     fmt::print("{}",str);
 }
 
@@ -152,6 +150,9 @@ Debugger::InstructionDisassemble()
         case OpCode::OP_INHERIT:{return SimpleInstruction("OP_INHERIT");}
         case OpCode::OP_GET_SUPER:{return ConstantInstruction("OP_GET_SUPER", false);}
         case OpCode::OP_SUPER_INVOKE:{return InvokeInstruction("OP_SUPER_INVOKE");}
+        case OpCode::OP_ARRAY_CREATE:{return SimpleInstruction("OP_ARRAY_CREATE");}
+        case OpCode::OP_ARRAY_GET:{return SimpleInstruction("OP_ARRAY_GET");}
+        case OpCode::OP_ARRAY_SET:{return SimpleInstruction("OP_ARRAY_SET");}
         default:{
             cout << "invalid OpCode!" << endl;
             return;

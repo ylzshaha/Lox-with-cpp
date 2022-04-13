@@ -1,4 +1,5 @@
 #include "include/scanner.h"
+#include "include/TokenType.h"
 #include "include/cpplox.h"
 #include "include/Token.h"
 #include <boost/blank.hpp>
@@ -153,6 +154,16 @@ void Scanner::scan_token_(Lox &lox)
     case ')':
     {
         add_token_(TokenType::RIGHT_PAREN);
+        break;
+    }
+    case ']':
+    {
+        add_token_(TokenType::RIGHT_BRACKET);
+        break;
+    }
+    case '[':
+    {
+        add_token_(TokenType::LEFT_BRACKET);
         break;
     }
     case '{':
