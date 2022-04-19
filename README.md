@@ -6,13 +6,14 @@ The language has a lot in common with JavaScript such as scope features, functio
 
 ## TreeWalker
 
-This is a interpreter executes code by traversing the AST. It consists the following parts:
+This is a interpreter executes code by traversing the AST. It consists of the following parts:
 
 - a lexical scanner
 - a recursive descent parser 
+- a resolver are used to fix local variable's scope
 - a interpreter traverse the AST to execute the code.
 
-you can get the first lox by running the following code.
+you can get the lox by running the following code.
 
 ```bash
 cd TreeWalker 
@@ -23,7 +24,7 @@ make all
 
 ## BytecodeEater
 
-This is a interpreter executes code by dispatching the bytecode. It consists the following parts:
+This is a interpreter executes code by dispatching the bytecode. It consists of the following parts:
 
 - a lexical scanner
 - a recursive descent parser
@@ -31,7 +32,7 @@ This is a interpreter executes code by dispatching the bytecode. It consists the
 - a VM executes bytecode
 - a stop-world and mark-and-sweep garbage collector
 
-you can get the first lox by running the following code.
+you can get the  lox by running the following code.
 
 ```bash
 cd BytecodeEater
